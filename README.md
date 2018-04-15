@@ -1,6 +1,6 @@
 # SquareRoot
 
-This project is an experiment, seeing how triangles can be used to find the square root of a number.
+This project explores how triangles can be used to find the square root of a number.
 
 
 ### Prerequisites
