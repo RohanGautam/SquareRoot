@@ -2,6 +2,13 @@
 
 This project explores how triangles can be used to find the square root of a number.
 
+## New readme
+I made this project 5 years ago (from the date of writing)! My previous code (the python script) was quite bad and ineffecient. Also, the math was clumsy. I've been learning Julia recently and wanted to try it out on a small project so I thought a rewrite of this idea with updated math and better code would be cool. The new perspective on the same idea involves viewing this "square root decomposition" as just rotations and scaling of vectors with one end at the origin. Look at the old readme below to see more details on the project and how I viewed it at the time. The table below has the two types of plots you can make, depending on how you decompose the squares the number!
+
+
+|       Optimal      | Non-optimal splits for pretty plot 😛|
+| :----------------: | ------------------ |
+| ![](imgs/new2.png) | ![](imgs/new1.png) |
 ## Old readme
 
 ### Prerequisites
