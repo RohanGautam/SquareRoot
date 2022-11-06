@@ -5,7 +5,7 @@ This project explores how triangles can be used to find the square root of a num
 
 ### Prerequisites
 
-* Python 2
+* Python 3
 * matplotlib
 
 ```
