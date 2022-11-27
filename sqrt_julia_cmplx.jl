@@ -87,6 +87,9 @@ md"""
 `Not optimal but pretty` $(@bind aesthetic html"<input type=checkbox>")
 """
 
+# ╔═╡ cf43197f-0e6c-4f9d-a208-934959dd6e6a
+Markdown.parse("### Calculating \$\\sqrt{$(num_to_sqrt)}\$")
+
 # ╔═╡ d5922977-a4dc-496b-852c-e15fd9293d91
 points = get_triangle_points(get_squares(num_to_sqrt,aesthetic=aesthetic))
 
@@ -95,12 +98,12 @@ begin
 	fig = plot(aspect_ratio=:equal, dpi=300)
 	for i in 1:length(points)
 		p=points[i]
-		# main vector
-		plot!([0,real(p)],[0,imag(p)], label=nothing, arrow=(:closed))
 		#secondary line
 		if i>1
 			plot!([real(points[i-1]),real(p)], [imag(points[i-1]), imag(p)], label=nothing, color="lightgrey")
 		end
+		# main vector
+		plot!([0,real(p)],[0,imag(p)], label=nothing, arrow=(:closed))		
 		#annotations
 		displaynum = round(abs(p),digits=2)
 		if i==length(points)
@@ -108,6 +111,13 @@ begin
 			annotate!([0.5real(p)], [0.5imag(p)], text("\$\\sqrt{$n}=$displaynum\$",:black,12))
 		else
 			annotate!([0.5real(p)], [0.5imag(p)], text("\$$displaynum\$",:grey,10))
+		end
+		# annotations for the secondary lines
+		if i>1
+			vec = p-points[i-1]
+			displaynum = round(Int,abs(vec))
+			annotate!([0.5real(vec)+real(points[i-1])],[0.5imag(vec)+imag(points[i-1])],text("\$$displaynum\$",:grey,10))
+			
 		end
 	end
 	# point at orgin
@@ -1101,6 +1111,7 @@ version = "1.4.1+0"
 # ╠═9c496826-75b2-4551-a928-5966fc4d04a5
 # ╟─d5bf0e81-0df8-487f-b837-ace09746a10a
 # ╟─88b4bcd7-5945-4632-bbdf-522a60d01fc0
+# ╟─cf43197f-0e6c-4f9d-a208-934959dd6e6a
 # ╟─d5922977-a4dc-496b-852c-e15fd9293d91
 # ╠═5dfa8f4c-24c1-4aac-b5ef-ecb50bb1b410
 # ╟─00000000-0000-0000-0000-000000000001
